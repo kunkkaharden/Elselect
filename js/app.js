@@ -1,5 +1,5 @@
 import {sitios} from './data.js';
-import { directive as onClickaway } from 'vue-clickaway';
+import { directive  } from './vue-clickaway';
 var app = new Vue({
   el: '#app',
   
@@ -14,7 +14,7 @@ var app = new Vue({
 
   },
   directives: {
-    onClickaway: onClickaway,
+    onClickaway: directive,
   },
   methods: {
     selecciona: function (id) {
