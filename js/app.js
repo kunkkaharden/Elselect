@@ -1,8 +1,8 @@
 import {sitios} from './data.js';
-import { mixin as clickaway } from './vue-clickaway.js' ;
+import { directive as onClickaway } from 'vue-clickaway';
 var app = new Vue({
   el: '#app',
-  mixins: [ clickaway ], 
+  
   data: {
     visible: false,
     sitio: 'sit',
@@ -12,6 +12,9 @@ var app = new Vue({
 
 
 
+  },
+  directives: {
+    onClickaway: onClickaway,
   },
   methods: {
     selecciona: function (id) {
