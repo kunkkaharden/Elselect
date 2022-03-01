@@ -1,5 +1,5 @@
 import {sitios} from './data.js';
-import { directive as onClickaway } from 'vue-clickaway';
+import { directive as onClickaway } from './vue-clickaway';
 var app = new Vue({
   el: '#app',
   
