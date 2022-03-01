@@ -6,56 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-        /* Style the input field */
-        #myInput {
-            padding: 20px;
-            margin-top: -6px;
-            border: 0;
-            border-radius: 0;
-            background: #f1f1f1;
-            
-        }
-        .hola{
-            margin-left: auto;
-            margin-right: auto;
-            width: 160px;
-            margin-top: 100px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <div class="dropdown hola">
-        <input class="form-control  dropdown-toggl" data-toggle="dropdown" id="myInput" type="text" placeholder="Search..">
-        <!-- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example -->
-            <!-- <span class="caret"></span></button> -->
-        <ul class="dropdown-menu">
-            
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-            <li><a href="#">jQuery</a></li>
-            <li><a href="#">Bootstrap</a></li>
-            <li><a href="#">Angular</a></li>
-        </ul>
+    <div id="app">
+        <form action="" method="" class="elform">
+            <div class="miSelect">
+                <input type="text" @click="clickInput" placeholder="Seleccione un sitio" v-model="sitio">
+                <div id="browsers" v-show="visible" class="miSelectOpciones">
+                    <option v-for="sitio , index in sitiosFiltrados" value="Edge" :key="index" @click="selecciona(index)">{{sitio.nombre}}</option>
+                   
+                </div>
+            </div>
+
+        </form>
+        <br><br><br>
+        visible: {{visible}} sitio: {{sitio}} wenas: {{}}
     </div>
+    <script src="./js/vue.js"></script>
+    <script  type="module" src="./js/app.js"></script>
 
-    <script>
-        $(document).ready(function(){
-          $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $(".dropdown-menu li").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-          });
 
-          
-        });
-        </script>
 </body>
 
 </html>
