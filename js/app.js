@@ -1,6 +1,8 @@
-import {sitios} from './data.js'
+import {sitios} from './data.js';
+import { mixin as clickaway } from ' ./vue-clickaway.min.js' ;
 var app = new Vue({
   el: '#app',
+  mixins: [ clickaway ], 
   data: {
     visible: false,
     sitio: 'sit',
@@ -21,6 +23,11 @@ var app = new Vue({
     },
     clickInput: function (){
       this.visible = true;
+      this.sitio = '';
+    },
+    clickOut: function(){
+      console.log('fuera');
+      this.visible = false;
       this.sitio = '';
     }
   },

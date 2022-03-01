@@ -12,8 +12,8 @@
 <body>
     <div id="app">
         <form action="" method="" class="elform">
-            <div class="miSelect">
-                <input type="text" @click="clickInput" placeholder="Seleccione un sitio" v-model="sitio">
+            <div class="miSelect" v-on-clickaway="clickOut()">
+                <input type="text" @click="clickInput()" placeholder="Seleccione un sitio" v-model="sitio">
                 <div id="browsers" v-show="visible" class="miSelectOpciones">
                     <option v-for="sitio , index in sitiosFiltrados" value="Edge" :key="index" @click="selecciona(index)">{{sitio.nombre}}</option>
                    
