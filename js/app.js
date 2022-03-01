@@ -1,5 +1,5 @@
 import {sitios} from './data.js';
-import { mixin as clickaway } from ' ./vue-clickaway.min.js' ;
+import { mixin as clickaway } from './vue-clickaway.min.js' ;
 var app = new Vue({
   el: '#app',
   mixins: [ clickaway ], 
